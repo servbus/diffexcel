@@ -1,8 +1,39 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Company>servbus</Company>
+    <Authors>cnryb</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>forSign.pfx</AssemblyOriginatorKeyFile>
+
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>diffexcel</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/servbus/diffexcel</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/servbus/diffexcel.git</RepositoryUrl>
+    <PackageId>diffexcel</PackageId>
+    <Version>1.0.0.3</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Description>Compare the differences between two excel files</Description>
+    <Copyright>servbus</Copyright>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="nupkg\**" />
+    <EmbeddedResource Remove="nupkg\**" />
+    <None Remove="nupkg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="4.5.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
 
 </Project>
